@@ -1,3 +1,0 @@
-from windowslogin import *
-
-startWindowsLogin()
