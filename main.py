@@ -1,6 +1,6 @@
 import sys
 import pygame
-import python.map as map
+import map as map
 def render():
     pass
 
@@ -10,8 +10,9 @@ def update():
 pygame.init()
 size = (1080, 720)
 black = (0, 0, 0)
-map1 = map.Map(9, 10, 50)
+map1 = map.Map(10, 10, 50)
 screen = pygame.display.set_mode(size, pygame.SRCALPHA)
+
 shiftX = 0
 shiftY = 0
 while 1:
@@ -28,6 +29,7 @@ while 1:
             shiftY += rel[1]
     map1.renderCase(screen, shiftX, shiftY)
     map1.renderCursor(shiftX, shiftY)
+    map1.renderGrid(screen, shiftX, shiftY)
     pygame.display.flip()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
